@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE databases PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+                           "http://castor.org/mapping.dtd">
+<mapping>
+
+  <class name="com.espaitic.bean.CallCenterLlamadas" auto-complete="true">
+    <map-to xml="data" />
+
+	<field name="xmlType" type="integer" >
+      <bind-xml name="xmlType" node="element" />
+    </field>
+
+    <field name="llamadas" collection="arraylist" type="desertic.database.LlamadaAlcatel" container="false"> 
+    	<bind-xml name="llamadas" node="element" />
+	</field>
+    
+  </class>
+
+
+  <class name="desertic.database.LlamadaAlcatel" auto-complete="true">
+  	<map-to xml="llamada" />
+  </class>
+  
+  <class name="com.espaitic.bean.CallCenterDatosExtension" auto-complete="true">
+  	<map-to xml="datosExtension" />
+  </class>
+
+  <class name="com.espaitic.bean.CallCenterDatosLlamada" auto-complete="true">
+  	<map-to xml="datosLlamada" />
+  </class>
+  
+  <class name="com.espaitic.bean.CallCenterRespuesta" auto-complete="true">
+  	<map-to xml="datosRespuesta" />
+  </class>
+
+  <class name="com.espaitic.bean.CallCenterDatosRedireccion" auto-complete="true">
+  	<map-to xml="datosRedireccion" />
+  </class>
+
+  <class name="com.espaitic.bean.CallCenterDatosNuevaLlamada" auto-complete="true">
+  	<map-to xml="datosNuevaLlamada" />
+  </class>
+  
+  <class name="com.espaitic.bean.CallCenterLogRespostaAlcUsuaris" auto-complete="true">
+    <map-to xml="dataUsers" />
+
+	<field name="xmlType" type="integer" >
+      <bind-xml name="xmlType" node="element" />
+    </field>
+
+    <field name="usuaris" collection="arraylist" type="com.espaitic.bean.CallCenterLogAlcUser" container="false"> 
+    	<bind-xml name="usuaris" node="element" />
+	</field>
+    
+  </class>
+      
+  <class name="com.espaitic.bean.CallCenterLogAlcUser" auto-complete="true">
+  	<map-to xml="usuari" />
+  </class>
+  
+  <class name="com.espaitic.bean.CallCenterLogPeticioRegistre" auto-complete="true">
+  	<map-to xml="registre" />
+  </class>
+  
+  <class name="com.espaitic.bean.CallCenterLogRespostaCallItem" auto-complete="true">
+    <map-to xml="dataTrucades" />
+
+	<field name="xmlType" type="integer" >
+      <bind-xml name="xmlType" node="element" />
+    </field>
+
+    <field name="trucades" collection="arraylist" type="com.espaitic.bean.CallCenterLogCallItem" container="false"> 
+    	<bind-xml name="trucades" node="element" />
+	</field>
+    
+  </class>
+      
+  <class name="com.espaitic.bean.CallCenterLogCallItem" auto-complete="true">
+  	<map-to xml="trucada" />
+  </class>
+</mapping>

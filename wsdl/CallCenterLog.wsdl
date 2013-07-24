@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.espaitic.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.espaitic.com" xmlns:intf="http://services.espaitic.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.espaitic.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getUsers">
+    <complexType/>
+   </element>
+   <element name="getUsersResponse">
+    <complexType>
+     <sequence>
+      <element name="getUsersReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCallsFromUser">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCallsFromUserResponse">
+    <complexType>
+     <sequence>
+      <element name="getCallsFromUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getUsersRequest">
+
+      <wsdl:part element="impl:getUsers" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersResponse">
+
+      <wsdl:part element="impl:getUsersResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCallsFromUserRequest">
+
+      <wsdl:part element="impl:getCallsFromUser" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCallsFromUserResponse">
+
+      <wsdl:part element="impl:getCallsFromUserResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CallCenterLog">
+
+      <wsdl:operation name="getUsers">
+
+         <wsdl:input message="impl:getUsersRequest" name="getUsersRequest"/>
+
+         <wsdl:output message="impl:getUsersResponse" name="getUsersResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCallsFromUser">
+
+         <wsdl:input message="impl:getCallsFromUserRequest" name="getCallsFromUserRequest"/>
+
+         <wsdl:output message="impl:getCallsFromUserResponse" name="getCallsFromUserResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CallCenterLogSoapBinding" type="impl:CallCenterLog">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getUsers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUsersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUsersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCallsFromUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCallsFromUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCallsFromUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CallCenterLogService">
+
+      <wsdl:port binding="impl:CallCenterLogSoapBinding" name="CallCenterLog">
+
+         <wsdlsoap:address location="http://localhost:8080/callCenter/services/CallCenterLog"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

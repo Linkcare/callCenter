@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.espaitic.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.espaitic.com" xmlns:intf="http://services.espaitic.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.espaitic.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getLlamadasFromUser">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLlamadasFromUserResponse">
+    <complexType>
+     <sequence>
+      <element name="getLlamadasFromUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="descolgar">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="descolgarResponse">
+    <complexType>
+     <sequence>
+      <element name="descolgarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="colgar">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="colgarResponse">
+    <complexType>
+     <sequence>
+      <element name="colgarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="redirigir">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="redirigirResponse">
+    <complexType>
+     <sequence>
+      <element name="redirigirReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pausar">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pausarResponse">
+    <complexType>
+     <sequence>
+      <element name="pausarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="reestablecer">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="reestablecerResponse">
+    <complexType>
+     <sequence>
+      <element name="reestablecerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="llamar">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="llamarResponse">
+    <complexType>
+     <sequence>
+      <element name="llamarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="reestablecerResponse">
+
+      <wsdl:part element="impl:reestablecerResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="pausarResponse">
+
+      <wsdl:part element="impl:pausarResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="redirigirRequest">
+
+      <wsdl:part element="impl:redirigir" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="pausarRequest">
+
+      <wsdl:part element="impl:pausar" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="descolgarResponse">
+
+      <wsdl:part element="impl:descolgarResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="llamarResponse">
+
+      <wsdl:part element="impl:llamarResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="colgarResponse">
+
+      <wsdl:part element="impl:colgarResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="descolgarRequest">
+
+      <wsdl:part element="impl:descolgar" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="llamarRequest">
+
+      <wsdl:part element="impl:llamar" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="redirigirResponse">
+
+      <wsdl:part element="impl:redirigirResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="colgarRequest">
+
+      <wsdl:part element="impl:colgar" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLlamadasFromUserResponse">
+
+      <wsdl:part element="impl:getLlamadasFromUserResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="reestablecerRequest">
+
+      <wsdl:part element="impl:reestablecer" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLlamadasFromUserRequest">
+
+      <wsdl:part element="impl:getLlamadasFromUser" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CallCenter">
+
+      <wsdl:operation name="getLlamadasFromUser">
+
+         <wsdl:input message="impl:getLlamadasFromUserRequest" name="getLlamadasFromUserRequest"/>
+
+         <wsdl:output message="impl:getLlamadasFromUserResponse" name="getLlamadasFromUserResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="descolgar">
+
+         <wsdl:input message="impl:descolgarRequest" name="descolgarRequest"/>
+
+         <wsdl:output message="impl:descolgarResponse" name="descolgarResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="colgar">
+
+         <wsdl:input message="impl:colgarRequest" name="colgarRequest"/>
+
+         <wsdl:output message="impl:colgarResponse" name="colgarResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="redirigir">
+
+         <wsdl:input message="impl:redirigirRequest" name="redirigirRequest"/>
+
+         <wsdl:output message="impl:redirigirResponse" name="redirigirResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="pausar">
+
+         <wsdl:input message="impl:pausarRequest" name="pausarRequest"/>
+
+         <wsdl:output message="impl:pausarResponse" name="pausarResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="reestablecer">
+
+         <wsdl:input message="impl:reestablecerRequest" name="reestablecerRequest"/>
+
+         <wsdl:output message="impl:reestablecerResponse" name="reestablecerResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="llamar">
+
+         <wsdl:input message="impl:llamarRequest" name="llamarRequest"/>
+
+         <wsdl:output message="impl:llamarResponse" name="llamarResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CallCenterSoapBinding" type="impl:CallCenter">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getLlamadasFromUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLlamadasFromUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLlamadasFromUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="descolgar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="descolgarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="descolgarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="colgar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="colgarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="colgarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="redirigir">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="redirigirRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="redirigirResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="pausar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="pausarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="pausarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="reestablecer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="reestablecerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="reestablecerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="llamar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="llamarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="llamarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CallCenterService">
+
+      <wsdl:port binding="impl:CallCenterSoapBinding" name="CallCenter">
+
+         <wsdlsoap:address location="http://localhost:8080/callCenter/services/CallCenter"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

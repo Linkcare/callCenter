@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CallCenterService WSDL service -->
+
+  <service name="CallCenter" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.espaitic.com"/>
+      <parameter name="wsdlServiceElement" value="CallCenterService"/>
+      <parameter name="schemaQualified" value="http://services.espaitic.com"/>
+      <parameter name="wsdlServicePort" value="CallCenter"/>
+      <parameter name="className" value="com.espaitic.services.CallCenter"/>
+      <parameter name="wsdlPortType" value="CallCenter"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLlamadasFromUser" qname="operNS:getLlamadasFromUser" returnQName="retNS:getLlamadasFromUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="descolgar" qname="operNS:descolgar" returnQName="retNS:descolgarReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="colgar" qname="operNS:colgar" returnQName="retNS:colgarReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="redirigir" qname="operNS:redirigir" returnQName="retNS:redirigirReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="pausar" qname="operNS:pausar" returnQName="retNS:pausarReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="reestablecer" qname="operNS:reestablecer" returnQName="retNS:reestablecerReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="llamar" qname="operNS:llamar" returnQName="retNS:llamarReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="redirigir getLlamadasFromUser pausar llamar descolgar reestablecer colgar"/>
+
+  </service>
+</deployment>

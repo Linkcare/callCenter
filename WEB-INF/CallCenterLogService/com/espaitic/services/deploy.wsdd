@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CallCenterLogService WSDL service -->
+
+  <service name="CallCenterLog" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.espaitic.com"/>
+      <parameter name="wsdlServiceElement" value="CallCenterLogService"/>
+      <parameter name="schemaQualified" value="http://services.espaitic.com"/>
+      <parameter name="wsdlServicePort" value="CallCenterLog"/>
+      <parameter name="className" value="com.espaitic.services.CallCenterLog"/>
+      <parameter name="wsdlPortType" value="CallCenterLog"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUsers" qname="operNS:getUsers" returnQName="retNS:getUsersReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://services.espaitic.com" xmlns:retNS="http://services.espaitic.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCallsFromUser" qname="operNS:getCallsFromUser" returnQName="retNS:getCallsFromUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.espaitic.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:xml" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getCallsFromUser getUsers"/>
+
+  </service>
+</deployment>
