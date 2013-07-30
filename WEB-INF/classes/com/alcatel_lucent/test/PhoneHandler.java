@@ -30,6 +30,8 @@ import com.alcatel_lucent.test.soapstub.types.phonehandler.OnVoiceMailMessagesNb
 import com.alcatel_lucent.www.wsp.ns._2008._03._26.ics.telephony.AlcCallState;
 import com.espaitic.bean.CallCenterLlamadas;
 import com.espaitic.util.Constants;
+import com.linkcare.objects.Session;
+import com.linkcare.objects.Event;
 
 import desertic.database.LlamadaAlcatel;
 
@@ -144,6 +146,29 @@ public class PhoneHandler implements AlcPhoneHandlerPortType {
 								null, 								//horaIniciConversa
 								null);								//horaFi
 						llamadas.add(llamada);
+						
+						String result = "";
+						Session s = new Session();
+						Event evt = new Event();
+						String location = "http://localhost:8000/ServerWSDL.php";
+						String user = "carme.hernandez";
+						String password = "linkcare";
+						s.setLocation(location);
+						evt.setLocation(location);
+						result = s.init(user,password,"IP","");
+						if ( result.equals("-1") ) {
+							System.out.println("Resultado erroneo:" + s.getErrorMsg()); 
+						} else {
+							System.out.println("Resultado correcto: token:" + result + " user:"+ s.user + " " + s.name ); 
+							System.out.println("event.insert('session','date', 'case','event_type')"); 
+							result = evt.insert( result, "2013-01-01", "", "#EVENT:CARE");
+							if ( result.equals("-1") ) {
+								System.out.println("Resultado erroneo:" + evt.getErrorMsg()); 
+							} else {
+								System.out.println("Resultado correcto:" + result); 
+							}
+						}
+						
 					}catch(Exception e){
 						e.printStackTrace();
 					}
