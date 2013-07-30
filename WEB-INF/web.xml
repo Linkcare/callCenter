@@ -14,6 +14,10 @@
     <display-name>SRVCallCenter</display-name>
     <servlet-name>SRVCallCenter</servlet-name>
     <servlet-class>com.espaitic.test.SRVCallCenter</servlet-class>
+    <init-param>
+			<param-name>log4j-init-file</param-name>
+			<param-value>log4j.properties</param-value>
+	</init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>

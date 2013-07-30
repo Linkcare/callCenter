@@ -259,30 +259,6 @@ public class SRVCallCenter extends HttpServlet {
 			llamadaOld.setNumeroAlQueTruca(llamadaNew.getNumeroAlQueTruca());
 			llamadaOld.setNumeroQueTruca(llamadaNew.getNumeroQueTruca());
 			
-			
-			String result = "";
-			Session s = new Session();
-			Event evt = new Event();
-			String location = "http://localhost:8000/ServerWSDL.php";
-			String user = "carme.hernandez";
-			String password = "linkcare";
-			s.setLocation(location);
-			evt.setLocation(location);
-			result = s.init(user,password,"IP","");
-			if ( result.equals("-1") ) {
-				System.out.println("Resultado erroneo:" + s.getErrorMsg()); 
-			} else {
-				System.out.println("Resultado correcto: token:" + result + " user:"+ s.user + " " + s.name ); 
-				System.out.println("event.insert('session','date', 'case','event_type')"); 
-				result = evt.insert( result, "2013-01-01", "", "#EVENT:CARE");
-				if ( result.equals("-1") ) {
-					System.out.println("Resultado erroneo:" + evt.getErrorMsg()); 
-				} else {
-					System.out.println("Resultado correcto:" + result); 
-				}
-			}
-			
-			
 		}
 		
 		//Si el estado no es RINGING se actualiza el estado
